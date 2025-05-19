@@ -1,0 +1,13 @@
+exit
+show collections
+exit
+show collections
+exit
+show collections
+show dbs
+use admin
+show dbs
+exit
+mongosh -u admin -p secret --authenticationDatabase admin
+mongosh -u <username> -p <password> --authenticationDatabase admin
+show dbs
