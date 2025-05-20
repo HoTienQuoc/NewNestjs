@@ -2,9 +2,11 @@ import { Body, ClassSerializerInterceptor, Controller, Get, Post, UseInterceptor
 import { PostService } from './post.service';
 import { PostDocument } from './schemas/post.schema';
 import { PostDto } from './dtos/post.dto';
+import { TransformDTOInterceptor } from 'src/interceptors/transform-dto.interceptor';
+import { ResponsePostDto } from './dtos/response-post.dto';
 
 @Controller('post')
-@UseInterceptors(ClassSerializerInterceptor)
+@UseInterceptors(new TransformDTOInterceptor(ResponsePostDto))
 export class PostController {
     constructor(private readonly postService: PostService){}
 
